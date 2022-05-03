@@ -1,0 +1,12 @@
+apiVersion: split.smi-spec.io/v1alpha4
+kind: TrafficSplit
+metadata:
+  name: error-split-canary
+  namespace: default
+spec:
+  service: productcatalogservice
+  backends:
+  - service: v1
+    weight: 50
+  - service: v2
+    weight: 50
